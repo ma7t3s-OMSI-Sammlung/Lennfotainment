@@ -1,0 +1,5 @@
+Lennfotainment_screenIsOn
+Timer
+Stopmode
+Lennfotainment_DarkMode
+Lennfotainment_DelayColor

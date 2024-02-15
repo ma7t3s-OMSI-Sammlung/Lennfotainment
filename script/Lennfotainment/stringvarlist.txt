@@ -1,0 +1,8 @@
+Lennfotainment_screenTexture
+Lennfotainment_Time
+Lennfotainment_Linie
+Lennfotainment_Terminus
+Lennfotainment_nextStop
+Lennfotainment_subsequentStops
+Lennfotainment_DelayLabel
+Lennfotainment_DelayTime

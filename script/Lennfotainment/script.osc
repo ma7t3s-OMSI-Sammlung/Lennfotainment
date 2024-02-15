@@ -1,0 +1,74 @@
+{macro:Lennfotainment_frame}
+    (L.L.Envir_Brightness) 0.5 <
+    {if}
+        2 (S.L.Lennfotainment_DarkMode)
+    {else}
+        1 (S.L.Lennfotainment_DarkMode)
+    {endif}
+
+    (L.L.elec_busbar_main) (S.L.Lennfotainment_screenIsOn)
+    {if}
+        "Lennfotainment\Schwarz.dds" (S.$.Lennfotainment_screenTexture)
+    {endif}
+
+    (L.$.nuntius_api_timeStr) (S.$.Lennfotainment_Time)
+    (L.$.nuntius_api_lineStr) (S.$.Lennfotainment_Linie)
+    (L.$.nuntius_api_terminusStr) (S.$.Lennfotainment_Terminus)
+
+    (L.$.nuntius_api_busstop0) (S.$.Lennfotainment_nextStop)
+    (L.$.nuntius_api_busstop3) "@" $+
+    (L.$.nuntius_api_busstop2) $+ "@" $+
+    (L.$.nuntius_api_busstop1) $+
+    (S.$.Lennfotainment_subsequentStops)
+
+    (L.L.Lennfotainment_DarkMode) 2 =
+    {if}
+        "Lennfotainment\Dark_" (L.L.haltewunsch) $IntToStr $+ ".dds" $+ (S.$.Lennfotainment_screenTexture)
+    {else}
+        "Lennfotainment\Light_" (L.L.haltewunsch) $IntToStr $+ ".dds" $+ (S.$.Lennfotainment_screenTexture)
+    {endif}
+
+    (L.L.haltewunsch) 1 =
+    {if}        
+        (L.L.Timer) (L.S.Timegap) + (S.L.Timer)
+
+        (L.L.Timer) 2 >=
+        {if}
+            (L.L.Stopmode) 1 =
+            {if}
+                0 (S.L.Timer)
+                0 (S.L.Stopmode)
+            {else}
+                0 (S.L.Timer)
+                1 (S.L.Stopmode)
+            {endif}
+        {endif}
+        
+        (L.L.Stopmode) 1 =
+        {if}
+            "- Wagen hält -" (S.$.Lennfotainment_nextStop)
+        {endif}
+    {endif}
+
+    (M.V.GetTTDelay) 0 <
+    {if}
+        "Verfrühung:" (S.$.Lennfotainment_DelayLabel)
+        3 (S.L.Lennfotainment_DelayColor)
+    {else}
+        "Verspätung:" (S.$.Lennfotainment_DelayLabel)
+        (M.V.GetTTDelay) 60 <
+        {if}
+            1 (S.L.Lennfotainment_DelayColor)
+        {else}
+            (M.V.GetTTDelay) 300 <
+            {if}
+                2 (S.L.Lennfotainment_DelayColor)
+            {else}
+                3 (S.L.Lennfotainment_DelayColor)
+            {endif}
+        {endif}
+
+    {endif}
+
+    (M.V.GetTTDelay) 60 / abs $IntToStr " Min." $+ (S.$.Lennfotainment_DelayTime)
+{end}
