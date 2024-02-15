@@ -1,13 +1,20 @@
 {macro:Lennfotainment_frame}
-    (L.L.Envir_Brightness) 0.5 <
-    {if}
-        2 (S.L.Lennfotainment_DarkMode)
-    {else}
-        1 (S.L.Lennfotainment_DarkMode)
-    {endif}
-
     (L.L.elec_busbar_main) (S.L.Lennfotainment_screenIsOn)
     {if}
+        (L.L.Envir_Brightness) 0.5 <
+        {if}
+            2 (S.L.Lennfotainment_DarkMode)
+        {else}
+            1 (S.L.Lennfotainment_DarkMode)
+        {endif}
+
+        (L.L.Lennfotainment_DarkMode) 2 =
+        {if}
+            "Lennfotainment\Dark_" (L.L.haltewunsch) $IntToStr $+ ".dds" $+ (S.$.Lennfotainment_screenTexture)
+        {else}
+            "Lennfotainment\Light_" (L.L.haltewunsch) $IntToStr $+ ".dds" $+ (S.$.Lennfotainment_screenTexture)
+        {endif}
+    {else}
         "Lennfotainment\Schwarz.dds" (S.$.Lennfotainment_screenTexture)
     {endif}
 
@@ -20,13 +27,6 @@
     (L.$.nuntius_api_busstop2) $+ "@" $+
     (L.$.nuntius_api_busstop1) $+
     (S.$.Lennfotainment_subsequentStops)
-
-    (L.L.Lennfotainment_DarkMode) 2 =
-    {if}
-        "Lennfotainment\Dark_" (L.L.haltewunsch) $IntToStr $+ ".dds" $+ (S.$.Lennfotainment_screenTexture)
-    {else}
-        "Lennfotainment\Light_" (L.L.haltewunsch) $IntToStr $+ ".dds" $+ (S.$.Lennfotainment_screenTexture)
-    {endif}
 
     (L.L.haltewunsch) 1 =
     {if}        
