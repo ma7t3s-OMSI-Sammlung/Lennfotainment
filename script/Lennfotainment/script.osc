@@ -1,7 +1,7 @@
 {macro:Lennfotainment_frame}
     (L.L.elec_busbar_main) (S.L.Lennfotainment_screenIsOn)
     {if}
-        (L.L.Envir_Brightness) 0.5 <
+        (L.S.SunAlt) 2.5 <
         {if}
             2 (S.L.Lennfotainment_DarkMode)
         {else}
