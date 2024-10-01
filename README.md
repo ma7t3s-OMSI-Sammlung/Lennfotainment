@@ -2,6 +2,13 @@
 ## Einleitung
 Lennfotainment ist eine moderne, minimalistische Innenanzeige nach Vorbild der "Infotainment"-Anzeige von LAWO.
 
+## Bilder
+![Screenshot 1](https://raw.githubusercontent.com/ma7t3s-OMSI-Sammlung/Lennfotainment/refs/heads/main/Screenshot/Screenshot%20(1).jpg)
+![Screenshot 2](https://raw.githubusercontent.com/ma7t3s-OMSI-Sammlung/Lennfotainment/refs/heads/main/Screenshot/Screenshot%20(2).jpg)
+![Screenshot 3](https://raw.githubusercontent.com/ma7t3s-OMSI-Sammlung/Lennfotainment/refs/heads/main/Screenshot/Screenshot%20(3).jpg)
+![Screenshot 4](https://raw.githubusercontent.com/ma7t3s-OMSI-Sammlung/Lennfotainment/refs/heads/main/Screenshot/Screenshot%20(4).jpg)
+![Screenshot 5](https://raw.githubusercontent.com/ma7t3s-OMSI-Sammlung/Lennfotainment/refs/heads/main/Screenshot/Screenshot%20(5).jpg)
+
 ### Features:
 - Anzeigen der nächsten 4 Haltestellen, Linie, Ziel und Uhrzeit
 - Haltewunsch
